@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.raxtarautomation.common.BaseClass;
 public class LoginPage extends BaseClass {
 	
-//WebDriver driver;
+
 	
 	public LoginPage(WebDriver driver)
 	{

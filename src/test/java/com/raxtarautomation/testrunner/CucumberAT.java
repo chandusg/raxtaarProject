@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 				monochrome = true, 
 				features = {"src/test/resources/features"},
 				glue = {"com.raxtarautomation.glue"},
-				tags= {"@inDev"})
+				tags= {"@login-feature"})
 
 
 public class CucumberAT {

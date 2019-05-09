@@ -27,7 +27,7 @@ public class CommonStepDefinition extends BaseClass{
 	{
 		dashBoardPage=new DashBoardPage(BaseClass.getDriverInstance());;
 		dashBoardPage.logout();
-//		System.out.println("After every scenario");
+
 	}
 
 }
