@@ -12,7 +12,7 @@ import cucumber.api.java.Before;
 public class CommonStepDefinition extends BaseClass{
 	
 	
-	DashBoardPage dashBoardPage= new DashBoardPage(BaseClass.getDriverInstance());;
+	DashBoardPage dashBoardPage;
 	@Before
 	public void BeforeScenario() throws IOException
 	{
@@ -21,10 +21,11 @@ public class CommonStepDefinition extends BaseClass{
 //		BaseClass.initdriver();
 	}
 	
+	
 	@After
 	public void AfterScenario() throws IOException
 	{
-		
+		dashBoardPage=new DashBoardPage(BaseClass.getDriverInstance());;
 		dashBoardPage.logout();
 //		System.out.println("After every scenario");
 	}
