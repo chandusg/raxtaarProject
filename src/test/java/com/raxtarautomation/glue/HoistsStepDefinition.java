@@ -69,5 +69,31 @@ public class HoistsStepDefinition extends BaseClass {
 		hoistsPage.closeButtonInPopUp();
 		}
 	
+	
+	@Then("^I see the Delete Hoist popup screen open$")
+	public void verifyDeletePopUp()
+	{
+		Assert.assertTrue(hoistsPage.isDeletePopUpDisplayed(), "Delete pop up is not displayed");
+	}
+	
+	
+	@When("I click on the \"(.*?)\" button the pop up")
+	public void acceptDelete(String buttonName)
+	{
+		hoistsPage.closeDeletePopUp(buttonName);
+	}
+	
+	@Then("^the hositDetails will be deleted$")
+	public void verifyHositDetailsDeleted()
+	{
+		Assert.assertTrue(hoistsPage.isHoistDetailsDeleted(), "Hosit Details are not deleted");
+	}
+	
+	@Then("^the hositDetails should not be deleted$") 
+	public void VerifyHoistDetails()
+	{
+		Assert.assertTrue(hoistsPage.isHoistDetailsNotDeleted(), "Hosit Details are  deleted");
+	}
+	
 	}
 

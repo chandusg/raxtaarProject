@@ -55,9 +55,11 @@ public class DashBoardPage extends BaseClass{
 	
 	public boolean isDashBoardPageDiaplayed()
 	{
+		
+		
 		return (linkOverview.isDisplayed()&&toggleBar.isDisplayed());
+		
 	}
-
 
 	public boolean isAllDashBoardItemsAreDiaplayed(String dashBoardItemName) {
 		if(dashBoardItemName.equalsIgnoreCase("hoists"))
@@ -106,6 +108,7 @@ public class DashBoardPage extends BaseClass{
 		if(logoutButton.isEnabled())
 		{
 			logoutButton.click();
+			
 		}
 		
 		driver.close();

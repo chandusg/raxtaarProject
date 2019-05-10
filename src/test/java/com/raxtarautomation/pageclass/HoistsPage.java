@@ -86,6 +86,20 @@ public class HoistsPage extends BaseClass {
 	private WebElement buttonCloseInThePopUp;
 	
 	
+	@FindBy(xpath="//div[@class='alert alert-warning']")
+	private WebElement deleteWarning;
+	
+	@FindBy(xpath="//button[contains(text(),'OK')]")
+	private WebElement buttonOk;
+	
+	
+	@FindBy(xpath="//button[contains(text(),'Cancel')]")
+	private WebElement buttonCancel;
+	
+	@FindBy(xpath="//button[contains(text(),'Close')]")
+	private WebElement buttonClose;
+	
+	
 	
 	public boolean isHositPageDisplayed() {
 		
@@ -196,6 +210,45 @@ public class HoistsPage extends BaseClass {
 		Thread.sleep(10000);
 		buttonCloseInThePopUp.click();
 		
+	}
+
+
+
+
+	public boolean isDeletePopUpDisplayed() {
+		
+		return deleteWarning.isDisplayed();
+	}
+
+
+
+
+	public void closeDeletePopUp(String buttonName) {
+		if(buttonName.equalsIgnoreCase("OK"))
+		{
+			buttonOk.click();
+		}
+		else if(buttonName.equals("Cancel"))
+		{
+			buttonCancel.click();
+		}
+		
+	}
+
+
+
+
+	public boolean isHoistDetailsDeleted() {
+		wait.until(ExpectedConditions.visibilityOf(buttonClose));
+		return !buttonClose.isDisplayed() ;
+	}
+
+
+
+
+	public boolean isHoistDetailsNotDeleted() {
+		
+		return buttonClose.isDisplayed();
 	}
 	
 	

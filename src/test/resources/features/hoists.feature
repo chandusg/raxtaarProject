@@ -34,11 +34,24 @@ On Clicking of Edit button, the hoist edit pop up should appear
 	|Note|Not Mandatory dummy Notes|
 	Then the pop up should be diaplyed with Sucessfully Submitted message
 	When the close button is clicked in the pop up
+@chandru	
+Scenario: It should be possible to delete the hositdetails when clicked on Ok button in the pop up
+	Given I am logged in to the application 
+	When I click on hoists menu 
+	Then I see the hoist overview screen 
+	And I see the records sorted with Number column 
+	And for first record I click on "Delete" button 
+	Then I see the Delete Hoist popup screen open 
+	When I click on the "OK" button the pop up
+	Then the hositDetails will be deleted
 	
-#Scenario: Clicking on delete button should show the delete pop up 
-#	Given I am logged in to the application 
-#	When I click on hoists menu 
-#	And for first record I click on edit/delete button 
-#	And I click on 'Delete' option 
-#	Then I see the Delete Hoist popup screen open 
-#	
+	Scenario: It should not be possible to delete the hosit details when clicked on Cancel button in the pop up
+	Given I am logged in to the application 
+	When I click on hoists menu 
+	Then I see the hoist overview screen 
+	And I see the records sorted with Number column 
+	And for first record I click on "Delete" button 
+	Then I see the Delete Hoist popup screen open 
+	When I click on the "Cancel" button the pop up
+	Then the hositDetails should not be deleted
+	
