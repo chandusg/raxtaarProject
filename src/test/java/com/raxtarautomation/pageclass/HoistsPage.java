@@ -28,7 +28,7 @@ public class HoistsPage {
 	@FindBy(xpath = "//tr[1]/th[contains(text(),'Number')]/span/i[@class='fa fa-angle-down']")
 	private WebElement linksortedNumber;
 
-	@FindBy(xpath = "(//span[@class='hoistRowMenuIcon'])[1]")
+	@FindBy(xpath = "(//td/span[@class='hoistRowMenuIcon'])[1]")
 	private WebElement linkRowMenuIcon;
 
 	@FindBy(xpath = "//div[text()='Edit']")
