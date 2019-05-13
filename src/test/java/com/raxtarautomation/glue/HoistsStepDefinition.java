@@ -53,5 +53,24 @@ public class HoistsStepDefinition {
 	public void closePopUp() throws InterruptedException {
 		hoistsPage.closeButtonInPopUp();
 	}
+	
+	@And("^for first record I click on Go to hoist Dashboard button$")
+	public void goBackToHoistDashBoardPage()
+	{
+		hoistsPage.clickOnHositDashBoard();
+	}
+	
+	
+	@Then("^Hoist DahBoard page should be seen$")
+	public void verifyHoistDashBoard()
+	{
+		Assert.assertTrue(hoistsPage.isHoistDashBoardDiaplayed(), "Hosit Details are  deleted");
+	}
+	
+	@When("^I click on add hoist button$")
+	public void addHoist() throws InterruptedException
+	{
+		hoistsPage.clickOnAddHoistButton();
+	}
 
 }

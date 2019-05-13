@@ -69,6 +69,18 @@ public class HoistsPage {
 
 	@FindBy(xpath = "//button[contains(text(),'Close')]")
 	private WebElement buttonCloseInThePopUp;
+	
+	@FindBy(xpath="//div[contains(text(),'Go To Hoist Dashboard')]")
+	private WebElement buttonbackToHositDashBoard;
+	
+	@FindBy(xpath="//a[contains(text(),'Info')]")
+	private WebElement linkInfo;
+	
+	@FindBy(xpath="//a[contains(text(),'Position')]")
+	private WebElement linkPosition;
+	
+	@FindBy(xpath="//a[contains(text(),'Status')]")
+	private WebElement linkStatus;
 
 	public boolean isHositPageDisplayed() {
 
@@ -113,11 +125,13 @@ public class HoistsPage {
 		Thread.sleep(2000);
 		act.sendKeys(Keys.ARROW_DOWN);
 		act.sendKeys(Keys.TAB);
-		/*
-		 * dropDownLocation.clear(); dropDownLocation.sendKeys(data.get("Location"));
-		 * Thread.sleep(2000); act.sendKeys(Keys.ARROW_DOWN); act.sendKeys(Keys.TAB);
-		 * act.sendKeys(Keys.TAB);
-		 */
+		
+		 dropDownLocation.clear(); 
+		 dropDownLocation.sendKeys(data.get("Location"));
+		 Thread.sleep(2000);
+		 act.sendKeys(Keys.ARROW_DOWN); act.sendKeys(Keys.TAB);
+		 act.sendKeys(Keys.TAB);
+		 
 
 		textBoxDescription.clear();
 		textBoxDescription.sendKeys(data.get("Description"));
@@ -153,5 +167,30 @@ public class HoistsPage {
 		buttonCloseInThePopUp.click();
 
 	}
+	
 
+
+
+	public void clickOnHositDashBoard() {
+		linkRowMenuIcon.click();
+		buttonbackToHositDashBoard.click();
+		
+	}
+
+
+
+
+	public boolean isHoistDashBoardDiaplayed() {
+		
+		return linkInfo.isDisplayed()&&  linkPosition.isDisplayed();
+	}
+
+
+
+
+	public void clickOnAddHoistButton() throws InterruptedException {
+		Thread.sleep(3000);
+		linkaddHoist.click();
+		
+	}
 }

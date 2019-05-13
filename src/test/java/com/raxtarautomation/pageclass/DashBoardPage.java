@@ -40,9 +40,7 @@ public class DashBoardPage {
 	@FindBy(xpath = "//span[contains(text(),'Logout')]")
 	private WebElement logoutButton;
 
-	public boolean isDashBoardPageDiaplayed() {
-		return (linkOverview.isDisplayed() && toggleBar.isDisplayed());
-	}
+	
 
 	public boolean isAllDashBoardItemsAreDiaplayed(String dashBoardItemName) {
 		if (dashBoardItemName.equalsIgnoreCase("hoists")) {
@@ -80,6 +78,13 @@ public class DashBoardPage {
 			logoutButton.click();
 		}
 
+	}
+	
+	public boolean isDashBoardPageDiaplayed()
+	{
+		
+		return (linkOverview.isDisplayed()&&toggleBar.isDisplayed());
+		
 	}
 
 }
