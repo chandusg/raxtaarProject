@@ -72,5 +72,24 @@ public class HoistsStepDefinition {
 	{
 		hoistsPage.clickOnAddHoistButton();
 	}
+	
+	
+	@When("^I click on the \"(.*?)\" button the pop up$")
+	public void verifyPopUp(String buttonName)
+	{
+		hoistsPage.clickButtonOnPopUp(buttonName);
+	}
+	
+	@Then("^the hositDetails will be deleted$")
+	public void verifyHositDetailsDeleted()
+	{
+		Assert.assertTrue(hoistsPage.isHoistdetailsDeleted(), "Hosit Details are  deleted");
+	}
+	
+	@Then("^the hositDetails should not be deleted$")
+	public void verifyHoistDetailsAreNotDeleted()
+	{
+		Assert.assertTrue(hoistsPage.isHoistdetailsNotDeleted(), "Hosit Details are not deleted");
+	}
 
 }

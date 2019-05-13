@@ -81,6 +81,26 @@ public class HoistsPage {
 	
 	@FindBy(xpath="//a[contains(text(),'Status')]")
 	private WebElement linkStatus;
+	
+	
+	
+	@FindBy(xpath="//button[contains(text(),'OK')]")
+	private WebElement buttonOkInPopUp;
+	
+	
+	@FindBy(xpath="//button[contains(text(),'Cancel')]")
+	private WebElement buttonCancelInPopUp;
+	
+	
+	@FindBy(xpath="//div[@class='alert alert-danger ng-binding ng-scope']/strong[contains(text(),'Failed!')]")
+	private WebElement messageNotDeleted;
+	
+	
+	
+	@FindBy(xpath="//input[@placeholder='Search Hoists']")
+	private WebElement searchHoist;
+	
+	
 
 	public boolean isHositPageDisplayed() {
 
@@ -192,5 +212,29 @@ public class HoistsPage {
 		Thread.sleep(3000);
 		linkaddHoist.click();
 		
+	}
+	
+	
+public void clickButtonOnPopUp(String buttonName) {
+		
+		if(buttonName.equalsIgnoreCase("OK"))
+				{
+			buttonOkInPopUp.click();
+				}
+		
+		else if(buttonName.equalsIgnoreCase("Cancel"))
+		{
+			buttonCancelInPopUp.click();
+		}
+	}
+
+	public boolean isHoistdetailsDeleted() {
+		
+		return !messageNotDeleted.isDisplayed();
+	}
+
+	public boolean isHoistdetailsNotDeleted() {
+		
+		return searchHoist.isDisplayed();
 	}
 }

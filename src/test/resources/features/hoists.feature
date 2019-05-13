@@ -41,8 +41,7 @@ It should be possible to delete the hositdetails when clicked on Ok button in th
 	When I click on hoists menu 
 	Then I see the hoist overview screen 
 	And I see the records sorted with Number column 
-	And for first record I click on "Delete" button 
-	Then I see the Delete Hoist popup screen open 
+	And for first record I click on "Delete" button  
 	When I click on the "OK" button the pop up 
 	Then the hositDetails will be deleted 
 	
@@ -52,8 +51,7 @@ It should not be possible to delete the hosit details when clicked on Cancel but
 	When I click on hoists menu 
 	Then I see the hoist overview screen 
 	And I see the records sorted with Number column 
-	And for first record I click on "Delete" button 
-	Then I see the Delete Hoist popup screen open 
+	And for first record I click on "Delete" button  
 	When I click on the "Cancel" button the pop up 
 	Then the hositDetails should not be deleted 
 	
